@@ -1,13 +1,13 @@
 services:
   db:
-    image: postgres:18
-    container_name: # Add docker container name
+    image: postgres:16
+    container_name: dwh_healthcare
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: # Add database name
+      POSTGRES_DB: dwh_healthcare
     ports:
-      - "5440:5432" # Set port to 5440 for docker
+      - "5440:5432"
     volumes:
       # Your datasets folder mounted into the container (read-only)
       - ./datasets:/datasets:ro
